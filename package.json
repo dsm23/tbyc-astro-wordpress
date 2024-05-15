@@ -8,6 +8,7 @@
     "build": "astro check && astro build",
     "fmt": "prettier --write . --plugin=prettier-plugin-astro",
     "fmt.check": "prettier --check . --plugin=prettier-plugin-astro",
+    "playwright": "playwright",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -19,6 +20,8 @@
     "typescript": "^5.4.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.12",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "prettier": "^3.2.5",
