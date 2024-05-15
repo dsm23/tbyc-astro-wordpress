@@ -1,24 +1,31 @@
 name: build
+
 on:
   pull_request:
     types:
       - opened
       - reopened
       - synchronize
+
 jobs:
   build:
     runs-on: ubuntu-22.04
     env:
-      node-version: 21.7.1
+      node-version: 22
     steps:
-      - uses: actions/checkout@v4
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit
+      - name: Git Checkout
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v3
         with:
-          version: 8
+          version: 9
       - name: Use Node.js ${{ env.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ env.node-version }}
           cache: "pnpm"
