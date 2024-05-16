@@ -10,7 +10,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     env:
-      node-version: 22.1.0
+      node-version: 22
     strategy:
       fail-fast: false
       matrix:
