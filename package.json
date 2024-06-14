@@ -15,9 +15,11 @@
   "dependencies": {
     "@astrojs/check": "^0.5.6",
     "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vue": "^4.0.8",
     "astro": "^4.4.15",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.2"
+    "typescript": "^5.4.2",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@playwright/test": "^1.44.0",
@@ -27,6 +29,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "prettier-plugin-css-order": "^2.0.1",
-    "prettier-plugin-tailwindcss": "^0.5.12"
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss-elevation": "^2.0.0"
   }
 }
