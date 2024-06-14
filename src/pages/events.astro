@@ -1,21 +1,10 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 
-let res = await fetch(
+const res = await fetch(
   `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/25329`,
 );
-let history = await res.json();
-
-// The getStaticPaths() is required for static Astro sites.
-// If using SSR, you will not need this function.
-export async function getStaticPaths() {
-  let data = await fetch(
-    `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/25329`,
-  );
-  let history = await data.json();
-
-  return history;
-}
+const history = await res.json();
 ---
 
 <Layout title={`${history.title.rendered} | Thorpe Bay Yacht Club`}>
