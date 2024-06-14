@@ -57,6 +57,9 @@ importers:
       tailwindcss-elevation:
         specifier: ^2.0.0
         version: 2.0.0(tailwindcss@3.4.1)
+      wp-types:
+        specifier: ^3.65.0
+        version: 3.65.0
 
 packages:
 
@@ -2913,6 +2916,9 @@ packages:
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
+
+  wp-types@3.65.0:
+    resolution: {integrity: sha512-QX0D7zrMdfKhrV/BjCCmLcwFNjmG/FD1TJGG34GcxKTYzfZlVKEyty7SZZvxJpB/WEKCU+N1TsvZX9CD7CsfyQ==}
 
   wrap-ansi@7.0.0:
     resolution: {integrity: sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==}
@@ -6329,6 +6335,10 @@ snapshots:
       string-width: 5.1.2
 
   word-wrap@1.2.5: {}
+
+  wp-types@3.65.0:
+    dependencies:
+      typescript: 5.4.2
 
   wrap-ansi@7.0.0:
     dependencies:
