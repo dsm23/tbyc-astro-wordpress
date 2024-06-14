@@ -10,6 +10,6 @@ test("has heading", async ({ page }) => {
   await page.goto("/");
 
   await expect(
-    page.getByRole("heading", { name: "Welcome to Astro" }),
+    page.getByRole("heading", { name: "Thorpe Bay Yacht Club" }),
   ).toBeVisible();
 });
