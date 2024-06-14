@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "~/layouts/Layout.astro";
 
 let res = await fetch(`${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/61`);
 let history = await res.json();
