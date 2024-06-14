@@ -1,0 +1,75 @@
+---
+import Arrow from "../../components/Arrow.astro";
+import Layout from "../../layouts/Layout.astro";
+
+const { slug } = Astro.params;
+
+let res = await fetch(
+  `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/posts?slug=${slug}`,
+);
+let [post] = await res.json();
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  let data = await fetch(`${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/posts`);
+  let posts = await data.json();
+
+  return posts.map((post: any) => ({
+    params: { slug: post.slug },
+    props: { post: post },
+  }));
+}
+---
+
+<Layout title={`${post.title.rendered} | Thorpe Bay Yacht Club`}>
+  <main class="container">
+    <a href="/" class="go-back ml-4 mt-6 flex w-min items-center gap-x-2">
+      <Arrow />
+      <span class="whitespace-pre">Go Back</span>
+    </a>
+
+    <h1
+      class="mt-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      set:html={post.title.rendered}
+    />
+    <Fragment set:html={post.content.rendered} />
+  </main>
+</Layout>
+
+<style>
+  .go-back {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem;
+    padding: theme(padding.3);
+    border-radius: 9999px;
+    outline: none;
+    background-color: theme(colors.gray.100);
+    color: theme(colors.sky.900);
+    text-decoration: none;
+    transition-duration: 500ms;
+    transition-property: color, background-color, transform;
+    transition-timing-function: theme(transitionTimingFunction.in-out);
+  }
+
+  .go-back:focus {
+    outline: 1px solid theme(colors.yellow.500);
+    outline-offset: 2px;
+  }
+
+  .go-back:hover {
+    transform: scale(1.25);
+    background-color: theme(colors.sky.900);
+    color: white;
+  }
+
+  main :global(a) {
+    color: theme(colors.sky.800);
+    text-decoration: underline;
+  }
+
+  main :global(a):hover {
+    color: theme(colors.sky.900);
+  }
+</style>
