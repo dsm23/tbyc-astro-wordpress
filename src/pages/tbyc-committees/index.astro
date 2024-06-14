@@ -1,0 +1,39 @@
+---
+import type { WP_REST_API_Post } from "wp-types";
+import Layout from "../../layouts/Layout.astro";
+
+let res = await fetch(`${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/27`);
+let page = (await res.json()) as WP_REST_API_Post;
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  let data = await fetch(
+    `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/27`,
+  );
+  let page = await data.json();
+
+  return page;
+}
+---
+
+<Layout title={`${page.title.rendered} | Thorpe Bay Yacht Club`}>
+  <main class="container">
+    <h1
+      class="mt-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      set:html={page.title.rendered}
+    />
+    <Fragment set:html={page.content.rendered} />
+  </main>
+</Layout>
+
+<style>
+  main :global(a) {
+    color: theme(colors.sky.800);
+    text-decoration: underline;
+  }
+
+  main :global(a):hover {
+    color: theme(colors.sky.900);
+  }
+</style>
