@@ -3,9 +3,9 @@
   import { onMounted, onUnmounted } from "vue";
   import Hamburger from "./Hamburger.vue";
 
-  import refFacebook from "../assets/fb.svg";
-  import refLogo from "../assets/tbyc.jpg";
-  import refX from "../assets/x.svg";
+  import refFacebook from "~/assets/fb.svg";
+  import refLogo from "~/assets/tbyc.jpg";
+  import refX from "~/assets/x.svg";
 
   import type { Ref } from "vue";
 
@@ -45,7 +45,7 @@
 
 <template>
   <nav
-    class="elevation-24 sticky top-0 z-10 w-full bg-sky-800 p-4 text-slate-200"
+    class="sticky top-0 z-10 w-full bg-sky-800 p-4 text-slate-200 elevation-24"
     aria-label="Primary"
     ref="container"
   >
