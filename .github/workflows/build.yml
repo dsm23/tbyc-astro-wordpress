@@ -39,3 +39,5 @@ jobs:
       #   run: pnpm run test.unit
       - name: build check
         run: pnpm run build
+        env:
+          PUBLIC_URL: ${{ vars.PUBLIC_URL }}
