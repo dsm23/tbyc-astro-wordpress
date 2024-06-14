@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import Navbar from "../components/Navbar.vue";
 
 interface Props {
   title: string;
@@ -20,6 +21,7 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
+    <Navbar client:load />
     <slot />
     <style is:global>
       :root {
@@ -32,6 +34,10 @@ const { title } = Astro.props;
           rgb(var(--accent-light)) 30%,
           white 60%
         );
+      }
+
+      body {
+        background-color: theme(colors.slate.300);
       }
 
       code {
