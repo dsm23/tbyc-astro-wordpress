@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+let res = await fetch(
+  `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/25329`,
+);
+let history = await res.json();
+
+// The getStaticPaths() is required for static Astro sites.
+// If using SSR, you will not need this function.
+export async function getStaticPaths() {
+  let data = await fetch(
+    `${import.meta.env.PUBLIC_URL}/wp-json/wp/v2/pages/25329`,
+  );
+  let history = await data.json();
+
+  return history;
+}
+---
+
+<Layout title={`${history.title.rendered} | Thorpe Bay Yacht Club`}>
+  <main class="container">
+    <h1
+      class="mt-6 scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+      set:html={history.title.rendered}
+    />
+    <Fragment set:html={history.content.rendered} />
+  </main>
+</Layout>
