@@ -64,7 +64,7 @@
           Home
         </a>
         <a
-          href="/contact"
+          href="/tbyc-location"
           class="block rounded px-2 py-1 outline-none hover:bg-blue-900 focus:bg-blue-900 focus:outline-yellow-500 focus-visible:outline-yellow-500"
           >Contact</a
         >
@@ -128,7 +128,7 @@
         <div id="primary-navigation" class="flex flex-col overflow-hidden">
           <a href="/">Home</a>
 
-          <a href="/contact">Contact</a>
+          <a href="/tbyc-location">Contact</a>
 
           <a
             href="http://issuu.com/tbyc/stacks/62fb3afbcb2a4f778ad75d0db5952bdf"
