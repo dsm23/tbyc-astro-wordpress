@@ -26,6 +26,9 @@ importers:
       astro:
         specifier: ^4.10.2
         version: 4.10.2(@types/node@20.14.2)(typescript@5.4.5)
+      dayjs:
+        specifier: ^1.11.11
+        version: 1.11.11
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
@@ -1542,6 +1545,9 @@ packages:
   cz-conventional-changelog@3.3.0:
     resolution: {integrity: sha512-U466fIzU5U22eES5lTNiNbZ+d8dfcHcssH4o7QsdWaCcRs/feIPCxKYSWkYBNs5mny7MvEfwpTLWjvbm94hecw==}
     engines: {node: '>= 10'}
+
+  dayjs@1.11.11:
+    resolution: {integrity: sha512-okzr3f11N6WuqYtZSvm+F776mB41wRZMhKP+hc34YdW+KmtYYK9iqvHSwo2k9FEH3fhGXvOPV6yz2IcSrfRUDg==}
 
   debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -5025,6 +5031,8 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
       - typescript
+
+  dayjs@1.11.11: {}
 
   debug@4.3.4:
     dependencies:
