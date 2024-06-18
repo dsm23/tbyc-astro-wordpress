@@ -8,7 +8,7 @@ interface Props {
 
 const { title } = Astro.props;
 
-const gtag = import.meta.env.GTAG;
+const measurementId = import.meta.env.GTAG;
 ---
 
 <!doctype html>
@@ -28,7 +28,8 @@ const gtag = import.meta.env.GTAG;
     <script
       type="text/partytown"
       async
-      src={`https://www.googletagmanager.com/gtag/js?id=${gtag}`}></script>
+      src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+    ></script>
     <script type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag() {
@@ -36,7 +37,7 @@ const gtag = import.meta.env.GTAG;
       };
 
       gtag("js", new Date());
-      gtag("config", gtag);
+      gtag("config", measurementId);
     </script>
   </head>
   <body>
