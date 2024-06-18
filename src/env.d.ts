@@ -2,6 +2,7 @@
 
 interface ImportMetaEnv {
   readonly PUBLIC_URL: string;
+  readonly GTAG: string;
 }
 
 interface ImportMeta {
