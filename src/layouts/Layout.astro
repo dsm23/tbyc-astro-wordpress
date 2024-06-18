@@ -30,7 +30,7 @@ const measurementId = import.meta.env.GTAG;
       async
       src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
     ></script>
-    <script type="text/partytown">
+    <script type="text/partytown" define:vars={{ measurementId }}>
       window.dataLayer = window.dataLayer || [];
       window.gtag = function gtag() {
         dataLayer.push(arguments);
